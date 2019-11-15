@@ -81,10 +81,10 @@ const convertDataProviderRequestToHTTP = (type, resource, params) => {
     }
     case UPDATE:
             console.log(params.data)
-            if(params.data.hasOwnProperty('goodsFullNum')){
+            if(resource==='essay'||resource==='goods'){
                 let formData = new FormData();
                 for (let key in params.data){
-                    if(key==='file'){
+                    if(key==='file'||key==='essayImgUrl'){
                     formData.append(key, params.data[key].rawFile);                    
                     
                 }else{
@@ -104,10 +104,10 @@ const convertDataProviderRequestToHTTP = (type, resource, params) => {
             };
     case CREATE:
         console.log(params.data)
-        if(params.data.hasOwnProperty('goodsFullNum')){
+        if(resource==='essay'||resource==='goods'){
             let formData = new FormData();
             for (let key in params.data){
-                if(key==='file'){
+                if(key==='file'||key==='essayImgUrl'){
                 formData.append(key, params.data[key].rawFile);                    
                 
             }else{

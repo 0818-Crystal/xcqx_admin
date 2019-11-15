@@ -14,7 +14,11 @@ const styles = {
 
 const MyUrlField = ({ record = {}, source, classes }) =>
     <a href={record[source]} className={classes.link}>
+<<<<<<< HEAD
         {record[source]}
+=======
+        {record[source].substring(0, 50)}
+>>>>>>> essay has been added an imgae property
         <LaunchIcon className={classes.icon} />
     </a>;
 
