@@ -56,7 +56,7 @@ fetch(request)
   })
   .then(({ resultBody }) => {
     resultBody.map((item, index) => {
-      options.push({ id: item.id, name: item.essayType });
+      options.push({ id: item.essayType, name: item.essayType });
     });
   });
 export const EssayList = props => (
@@ -83,8 +83,8 @@ export const EssayEdit = props => (
 
       <SelectInput choices={options} label="所属目录" source="essayType" />
       <ImageInput
-        source="essayImgUrl"
-        label="商品图片"
+        source="file"
+        label="文章图片"
         accept="image/*"
         placeholder={<p>拖拽你的图片到这里</p>}
       >
@@ -101,8 +101,8 @@ export const EssayCreate = props => (
 
       <SelectInput choices={options} label="所属目录" source="essayType" />
       <ImageInput
-        source="essayImgUrl"
-        label="商品图片"
+        source="file"
+        label="文章图片"
         accept="image/*"
         placeholder={<p>拖拽你的图片到这里</p>}
       >
