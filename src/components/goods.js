@@ -16,7 +16,7 @@ import {
   SelectInput
 } from "react-admin";
 import { ExportExcel } from "../util/excelUtil";
-
+import MyStateField from "./MyStateFiled";
 const GoodsExporter = goods => {
   const initColumn = [
     {
@@ -83,8 +83,13 @@ export const GoodList = props => (
       <NumberField source="goodsFullNum" label="商品总量" />
       <NumberField source="goodsPrice" label="商品价格" />
       <ImageField source="goodsImg" label="商品图片"></ImageField>
-      <TextField source="goodsState" label="上架状态" />
-      <TextField source="goodsRecommend" label="推荐商品" />
+      <MyStateField source="goodsState" label="上架状态" on="上架" off="下架" />
+      <MyStateField
+        source="goodsRecommend"
+        label="推荐商品"
+        on="推荐"
+        off="不推荐"
+      />
       <DateField source="goodsUploadTime" label="上架时间" />
       <EditButton></EditButton>
     </Datagrid>
@@ -113,7 +118,7 @@ export const GoodCreate = props => (
           { id: "0", name: "下架" }
         ]}
       />
-      <TextInput
+      <SelectInput
         source="goodsRecommend"
         label="推荐商品"
         choices={[
@@ -150,7 +155,7 @@ export const GoodEdit = props => (
           { id: "0", name: "下架" }
         ]}
       />
-      <TextInput
+      <SelectInput
         source="goodsRecommend"
         label="推荐商品"
         choices={[

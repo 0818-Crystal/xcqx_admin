@@ -15,8 +15,8 @@ import {
   TextInput
 } from "react-admin";
 import { ExportExcel } from "../util/excelUtil";
+import ReferenceText from "./MyReferenceText";
 import OpenIdUrl from "./OpenIdUrl";
-
 const ExchangeExporter = exchange => {
   console.log(exchange);
   const initColumn = [
@@ -50,14 +50,20 @@ const ExchangeExporter = exchange => {
   ExportExcel(initColumn, exchange, "奖品兑换.xlsx");
 };
 export const IntegralUsersAllList = props => (
-  <List {...props} sort={{ field: "integral_num", order: "DESC" }}>
+  <List
+    {...props}
+    sort={{ field: "integral_num", order: "DESC" }}
+    exporter={false}
+  >
     <Datagrid rowClick="edit">
       <TextField source="id" />
 
       <DateField source="createTime" label="创建时间" />
       <DateField source="updateTime" label="更新时间" />
-      <TextField source="openId" />
-
+      {/* <ReferenceField source="openId" reference="user">
+        <ReferenceText source="nickname" />
+      </ReferenceField> */}
+      <OpenIdUrl source="openId" label="openId"></OpenIdUrl>
       <NumberField source="integralNum" label="全部积分" />
       <NumberField source="usefulNum" label="可用积分" />
     </Datagrid>
