@@ -84,7 +84,6 @@ const convertDataProviderRequestToHTTP = (type, resource, params) => {
       return { url: `${API_URL}/${resource}?${stringify(query)}` };
     }
     case UPDATE:
-      console.log(params.data);
       if (resource === "essay" || resource === "goods") {
         let formData = new FormData();
         for (let key in params.data) {
@@ -103,6 +102,12 @@ const convertDataProviderRequestToHTTP = (type, resource, params) => {
             }),
             body: formData
           }
+        };
+      }
+      if (resource === "integralUsersAll") {
+        return {
+          url: `${API_URL}/${resource}/updateOriginNum/${params.data.openId}?originNum=${params.data.originNum}`,
+          options: { method: "PUT" }
         };
       }
       return {

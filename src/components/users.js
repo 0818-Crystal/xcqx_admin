@@ -75,7 +75,7 @@ export const UserList = props => (
     filters={<UserFilter />}
     exporter={UserExporter}
   >
-    <Datagrid rowClick="edit">
+    <Datagrid>
       <DateField source="createTime" label="关注时间"></DateField>
       <TextField source="id" />
       <TextField source="openId" label="openID"></TextField>

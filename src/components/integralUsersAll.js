@@ -12,6 +12,7 @@ import {
   ReferenceField,
   DateField,
   EditButton,
+  NumberInput,
   TextInput
 } from "react-admin";
 import { ExportExcel } from "../util/excelUtil";
@@ -54,8 +55,9 @@ export const IntegralUsersAllList = props => (
     {...props}
     sort={{ field: "integral_num", order: "DESC" }}
     exporter={false}
+    filters={<IntegralUsersAllFilter />}
   >
-    <Datagrid rowClick="edit">
+    <Datagrid>
       <TextField source="id" />
 
       <DateField source="createTime" label="创建时间" />
@@ -66,6 +68,20 @@ export const IntegralUsersAllList = props => (
       <OpenIdUrl source="openId" label="openId"></OpenIdUrl>
       <NumberField source="integralNum" label="全部积分" />
       <NumberField source="usefulNum" label="可用积分" />
+      <NumberField source="originNum" label="附加积分" />
+      <EditButton />
     </Datagrid>
   </List>
+);
+const IntegralUsersAllFilter = props => (
+  <Filter {...props}>
+    <TextInput label="搜索openid" source="open_id" alwaysOn />
+  </Filter>
+);
+export const IntegralUsersAllEdit = props => (
+  <Edit {...props}>
+    <SimpleForm>
+      <NumberInput source="originNum" label="附加积分" />
+    </SimpleForm>
+  </Edit>
 );
