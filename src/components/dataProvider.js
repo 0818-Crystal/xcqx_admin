@@ -84,6 +84,7 @@ const convertDataProviderRequestToHTTP = (type, resource, params) => {
       return { url: `${API_URL}/${resource}?${stringify(query)}` };
     }
     case UPDATE:
+      console.log(params.data);
       if (resource === "essay" || resource === "goods") {
         let formData = new FormData();
         for (let key in params.data) {

@@ -59,12 +59,7 @@ const App = () => (
       create={IntegralItemCreate}
       options={{ label: "任务列表" }}
     />
-    <Resource
-      name="integralUsersAll"
-      list={IntegralUsersAllList}
-      edit={IntegralUsersAllEdit}
-      options={{ label: "积分排行" }}
-    />
+
     <Resource
       name="user-exchange"
       list={ExchangeList}

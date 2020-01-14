@@ -15,6 +15,8 @@ import {
   NumberInput,
   SelectInput
 } from "react-admin";
+import MyImageField from "./MyImageField";
+
 import { ExportExcel } from "../util/excelUtil";
 import MyStateField from "./MyStateFiled";
 const GoodsExporter = goods => {
@@ -82,7 +84,7 @@ export const GoodList = props => (
       <NumberField source="goodsRestNum" label="商品剩余总量" />
       <NumberField source="goodsFullNum" label="商品总量" />
       <NumberField source="goodsPrice" label="商品价格" />
-      <ImageField source="goodsImg" label="商品图片"></ImageField>
+      <MyImageField source="goodsImg" label="商品图片"></MyImageField>
       <MyStateField source="goodsState" label="上架状态" on="上架" off="下架" />
       <MyStateField
         source="goodsRecommend"
@@ -91,7 +93,7 @@ export const GoodList = props => (
         off="不推荐"
       />
       <DateField source="goodsUploadTime" label="上架时间" />
-      <EditButton></EditButton>
+      <EditButton label="修改" />
     </Datagrid>
   </List>
 );

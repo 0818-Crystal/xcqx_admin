@@ -69,7 +69,7 @@ export const IntegralUsersAllList = props => (
       <NumberField source="integralNum" label="全部积分" />
       <NumberField source="usefulNum" label="可用积分" />
       <NumberField source="originNum" label="附加积分" />
-      <EditButton />
+      <EditButton label="修改" />
     </Datagrid>
   </List>
 );

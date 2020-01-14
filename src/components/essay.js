@@ -14,6 +14,7 @@ import {
   Create
 } from "react-admin";
 import MyUrlField from "./MyUrlField";
+import MyImageField from "./MyImageField";
 import { ExportExcel } from "../util/excelUtil";
 
 export const EssayExporter = essay => {
@@ -69,9 +70,9 @@ export const EssayList = props => (
       <TextField source="id" />
       <TextField source="essayTitle" label="文章标题" />
       <MyUrlField source="essayUrl" label="文章地址" />
-      <ImageField source="essayImgUrl" label="文章图片"></ImageField>
+      <MyImageField source="essayImgUrl" label="文章图片"></MyImageField>
       <TextField source="essayType" label="所属目录" />
-      <EditButton />
+      <EditButton label="修改" />
     </Datagrid>
   </List>
 );

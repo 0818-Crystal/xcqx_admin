@@ -67,7 +67,7 @@ export const IntegralItemList = props => (
       <MyUrlField source="integralUrl" label={"跳转链接"} />
       <TextField source="integralState" label={"状态"} />
       <NumberField source="weight" label={"权重"} />
-      <EditButton></EditButton>
+      <EditButton label="修改" />
     </Datagrid>
   </List>
 );

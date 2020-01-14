@@ -14,7 +14,7 @@ const styles = {
 
 const MyUrlField = ({ record = {}, source, classes }) => (
   <a href={record[source]} className={classes.link}>
-    {record[source].substring(0, 50)}
+    链接地址
     <LaunchIcon className={classes.icon} />
   </a>
 );

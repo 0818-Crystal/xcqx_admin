@@ -8,7 +8,9 @@ import {
   Filter,
   DateInput,
   ReferenceField,
+  NumberInput,
   DateField,
+  NumberField,
   EditButton,
   TextInput
 } from "react-admin";
@@ -52,16 +54,6 @@ const UserExporter = users => {
       title: "电话号码",
       dataIndex: "phoneNumber",
       key: "phoneNumber"
-    },
-    {
-      title: "性别",
-      dataIndex: "sex",
-      key: "sex"
-    },
-    {
-      title: "城市",
-      dataIndex: "city",
-      key: "city"
     }
   ];
 
@@ -76,10 +68,9 @@ export const UserList = props => (
     exporter={UserExporter}
   >
     <Datagrid>
-      <DateField source="createTime" label="关注时间"></DateField>
       <TextField source="id" />
-      <TextField source="openId" label="openID"></TextField>
-      <AvatarField source="headimgurl" title="头像" />
+      {/* <TextField source="openId" label="openID"></TextField> */}
+      <AvatarField source="headimgurl" title="头像" label="头像" />
 
       <TextField source="nickname" label="微信昵称" />
 
@@ -93,17 +84,20 @@ export const UserList = props => (
       />
       <TextField source="phoneNumber" label="电话号码" />
       <TextField source="realName" label="真实姓名" />
-      <TextField source="sex" label="性别" />
-      <TextField source="city" label="城市" />
-      <TextField source="province" label="省份" />
-      <EditButton />
+      <NumberField source="integralNum" label="全部积分" />
+      <NumberField source="usefulNum" label="可用积分" />
+      <NumberField source="originNum" label="附加积分" />
+      <DateField source="createTime" label="关注时间"></DateField>
+
+      <EditButton label="修改" />
     </Datagrid>
   </List>
 );
 const UserFilter = props => (
   <Filter {...props}>
     <TextInput label="搜索昵称" source="nickname" alwaysOn />
-    <TextInput label="手机号码" source="phone_number" />
+    <TextInput label="手机号码" source="phone_number" alwaysOn />
+    <TextInput label="真实姓名" source="real_name" alwaysOn />
   </Filter>
 );
 
@@ -112,6 +106,7 @@ export const UserEdit = props => (
     <SimpleForm>
       <TextInput source="phoneNumber" />
       <TextInput source="realName" />
+      <NumberInput source="originNum" label="附加积分" />
     </SimpleForm>
   </Edit>
 );
