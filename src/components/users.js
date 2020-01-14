@@ -74,7 +74,7 @@ export const UserList = props => (
 
       <TextField source="nickname" label="微信昵称" />
 
-      <TextField source="popularizerId" label="邀请者" />
+      {/* <TextField source="popularizerId" label="邀请者" /> */}
 
       <MyStateField
         source="followerState"
