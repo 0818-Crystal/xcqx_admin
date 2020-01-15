@@ -1,3 +1,6 @@
+/**
+ * 用户订单管理
+ */
 import React from "react";
 import {
   List,
@@ -12,10 +15,16 @@ import {
   ReferenceField,
   DateField,
   EditButton,
+  DeleteButton,
   TextInput
 } from "react-admin";
 import { ExportExcel } from "../util/excelUtil";
+import API_URL from "../config";
 
+/**
+ * 导出excel格式设置
+ * @param {*} exchange
+ */
 const ExchangeExporter = exchange => {
   console.log(exchange);
   const initColumn = [
@@ -48,6 +57,10 @@ const ExchangeExporter = exchange => {
 
   ExportExcel(initColumn, exchange, "奖品兑换.xlsx");
 };
+/**
+ * 列表设置
+ * @param {*} props
+ */
 export const ExchangeList = props => (
   <List
     {...props}
@@ -65,12 +78,16 @@ export const ExchangeList = props => (
       <TextField source="goodsName" label="商品名称" />
       <TextField source="flowingWater" label="详细流水" />
       <NumberField source="goodsPrice" label="商品价格" />
+      <DeleteButton label="删除" />
     </Datagrid>
   </List>
 );
-const request = new Request("http://203.195.230.234:8080/goods/", {
+const request = new Request(`${API_URL}/goods/`, {
   method: "GET"
 });
+/**
+ * 获取商品名称列表
+ */
 var options = [];
 fetch(request)
   .then(response => {
@@ -85,6 +102,9 @@ fetch(request)
       options.push({ id: item.goodsName, name: item.goodsName });
     });
   });
+/**
+ * 搜索设置
+ */
 const ExchangeFilter = props => (
   <Filter {...props}>
     <DateInput source="time_start" label="开始时间" alwaysOn />

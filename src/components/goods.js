@@ -1,3 +1,6 @@
+/**
+ * 商品表
+ */
 import React from "react";
 import {
   List,
@@ -97,6 +100,10 @@ export const GoodList = props => (
     </Datagrid>
   </List>
 );
+/**
+ * 创建商品的格式
+ * @param {*}} props
+ */
 export const GoodCreate = props => (
   <Create {...props}>
     <SimpleForm>
@@ -131,7 +138,10 @@ export const GoodCreate = props => (
     </SimpleForm>
   </Create>
 );
-
+/**
+ * 修改商品的格式
+ * @param {*} props
+ */
 export const GoodEdit = props => (
   <Edit {...props}>
     <SimpleForm>

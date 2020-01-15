@@ -1,3 +1,6 @@
+/**
+ * 用户管理
+ */
 import React from "react";
 import {
   List,
@@ -18,6 +21,10 @@ import AvatarField from "./AvatarField";
 import { ExportExcel } from "../util/excelUtil";
 import MyStateField from "./MyStateFiled";
 
+/**
+ * 导出excel格式设置
+ * @param {*} users
+ */
 const UserExporter = users => {
   const initColumn = [
     {
@@ -59,7 +66,10 @@ const UserExporter = users => {
 
   ExportExcel(initColumn, users, "用户.xlsx");
 };
-
+/**
+ * 用户列表设置
+ * @param {*} props
+ */
 export const UserList = props => (
   <List
     {...props}
@@ -93,6 +103,10 @@ export const UserList = props => (
     </Datagrid>
   </List>
 );
+/**
+ * 查询设置
+ * @param {*} props
+ */
 const UserFilter = props => (
   <Filter {...props}>
     <TextInput label="搜索昵称" source="nickname" alwaysOn />
@@ -100,7 +114,9 @@ const UserFilter = props => (
     <TextInput label="真实姓名" source="real_name" alwaysOn />
   </Filter>
 );
-
+/**
+ * 用户修改设置
+ */
 export const UserEdit = props => (
   <Edit {...props}>
     <SimpleForm>

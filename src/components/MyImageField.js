@@ -1,3 +1,6 @@
+/**
+ * 自定义图片样式
+ */
 import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 

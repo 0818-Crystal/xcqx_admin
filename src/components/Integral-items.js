@@ -1,3 +1,6 @@
+/**
+ * 任务表
+ */
 import React from "react";
 import {
   List,
@@ -13,7 +16,10 @@ import {
 } from "react-admin";
 import { ExportExcel } from "../util/excelUtil";
 import MyUrlField from "./MyUrlField";
-
+/**
+ * 设置导出格式
+ * @param {*}} item
+ */
 export const IntegralItemExporter = item => {
   const initColumn = [
     {
@@ -56,6 +62,10 @@ export const IntegralItemExporter = item => {
 
   ExportExcel(initColumn, item, "任务列表.xlsx");
 };
+/**
+ * 设置列表格式
+ * @param {*} props
+ */
 export const IntegralItemList = props => (
   <List {...props} sort={{ field: "id", order: "ASC" }}>
     <Datagrid rowClick="edit">
@@ -71,7 +81,9 @@ export const IntegralItemList = props => (
     </Datagrid>
   </List>
 );
-
+/**
+ * 设置修改内容的格式
+ */
 export const IntegralItemEdit = props => (
   <Edit {...props}>
     <SimpleForm>

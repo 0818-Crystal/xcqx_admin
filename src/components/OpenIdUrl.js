@@ -1,3 +1,6 @@
+/**
+ * 自定义openid的链接样式
+ */
 import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import LaunchIcon from "@material-ui/icons/Launch";

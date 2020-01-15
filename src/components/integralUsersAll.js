@@ -1,3 +1,7 @@
+/**
+ * 积分表
+ * 暂时没有用到
+ */
 import React from "react";
 import {
   List,

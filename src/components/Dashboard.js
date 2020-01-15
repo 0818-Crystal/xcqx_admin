@@ -1,7 +1,12 @@
+/**
+ * 主页
+ */
 import React, { Component } from "react";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import CardHeader from "@material-ui/core/CardHeader";
+import API_URL from "../config";
+
 export default class Dashboard extends Component {
   state = {};
   componentDidMount() {
@@ -10,7 +15,7 @@ export default class Dashboard extends Component {
   fetchExchanges() {
     var that = this;
     const request = new Request(
-      "http://203.195.230.234:8080/user-exchange?filter=%7B%7D&range=%5B1%2C20%5D&sort=%5B'create_time'%2C'DESC'%5D",
+      `${API_URL}/user-exchange?filter=%7B%7D&range=%5B1%2C20%5D&sort=%5B'create_time'%2C'DESC'%5D`,
       {
         method: "GET"
       }

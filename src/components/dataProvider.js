@@ -1,3 +1,7 @@
+/**
+ * fetch数据的统一入口
+ * 更改api地址需要修改API_URL
+ */
 import {
   GET_LIST,
   GET_ONE,
@@ -11,7 +15,7 @@ import {
 import { stringify } from "query-string";
 import { DELETE_MANY } from "ra-core";
 import humps from "humps";
-const API_URL = "http://203.195.230.234:8080";
+import API_URL from "../config";
 
 /**
  * @param {String} type One of the constants appearing at the top of this file, e.g. 'UPDATE'
