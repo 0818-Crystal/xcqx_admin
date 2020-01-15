@@ -92,7 +92,7 @@ export const GoodList = props => (
         on="推荐"
         off="不推荐"
       />
-      <DateField source="goodsUploadTime" label="上架时间" />
+      <TextField source="goodsUploadTime" label="上架时间" />
       <EditButton label="修改" />
     </Datagrid>
   </List>

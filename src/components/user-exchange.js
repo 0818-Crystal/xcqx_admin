@@ -55,12 +55,15 @@ export const ExchangeList = props => (
     exporter={ExchangeExporter}
     sort={{ field: "create_time", order: "DESC" }}
   >
-    <Datagrid rowClick="edit">
+    <Datagrid>
+      <TextField source="id" label="id" />
       <TextField source="createTime" label="兑换时间" />
+
       <TextField source="realName" label="姓名" />
       <TextField source="phoneNumber" label="手机号码" />
-      <TextField source="id" label="id" />
+
       <TextField source="goodsName" label="商品名称" />
+      <TextField source="flowingWater" label="详细流水" />
       <NumberField source="goodsPrice" label="商品价格" />
     </Datagrid>
   </List>

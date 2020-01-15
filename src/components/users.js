@@ -87,7 +87,7 @@ export const UserList = props => (
       <NumberField source="integralNum" label="全部积分" />
       <NumberField source="usefulNum" label="可用积分" />
       <NumberField source="originNum" label="附加积分" />
-      <DateField source="createTime" label="关注时间"></DateField>
+      <TextField source="createTime" label="关注时间"></TextField>
 
       <EditButton label="修改" />
     </Datagrid>
